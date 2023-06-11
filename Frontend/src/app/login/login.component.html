@@ -1,0 +1,29 @@
+<div class="Login-page">
+  <div class="Login-form">
+
+    <h1>Login Form</h1>
+    <form [formGroup]="Loginform" (ngSubmit)="onSubmit()">
+      <div>
+        <label for="email">Email:</label>
+        <input type="email" id="email" formControlName="email">
+        <div class="error-message" *ngIf="isFieldInvalid('email') && isFormSubmitted">
+          *Email is required.
+        </div>
+      </div>
+
+      <div>
+        <label for="password">Enter Password:</label>
+        <input type="password" id="password" formControlName="password">
+        <div class="error-message" *ngIf="isFieldInvalid('password') && isFormSubmitted">
+          *Password is required.
+        </div>
+      </div>
+
+      <button type="submit">Login</button>
+      <div class="register-link">
+        <p>Don't have an account? <a href="/register">Register here</a></p>
+      </div>
+    </form>
+  </div>
+
+</div>
