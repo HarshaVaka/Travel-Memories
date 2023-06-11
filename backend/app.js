@@ -44,11 +44,11 @@ app.use(cors(corsOptions));
 
 //Database
 const db=require('./db');
-const dbName="Travel_Memrories";
+const dbName="Travel_Memories";
 db.authenticate()
   .then(() =>{
-    logger.info(`conneced to Database: ${dbName}`);
-    console.log(`conneced to Database: ${dbName}`);
+    logger.info(`connected to Database: ${dbName}`);
+    console.log(`connected to Database: ${dbName}`);
   })
   .catch(err =>{
     logger.error(`Failed to connect to Database: ${dbName} -${err} -${new Error().stack}`);
@@ -64,6 +64,8 @@ require('./Models/modelInit');
 app.get('/', (req, res) => {
   res.send('Hello, world!');
 });
+
+app.use('/api/auth',require('./Routes/auth'))
 
 
 

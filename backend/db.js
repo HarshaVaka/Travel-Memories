@@ -1,10 +1,11 @@
 const { Sequelize } = require('sequelize');
 
-const dbName="Travel_Memrories";
-const dbUser="HarshaVaka";
-const dbPassword="Vakaharsha@91";
+const dbName="Travel_Memories";
+const dbUser="VakaHarsha";
+const dbPassword="TravelMemories";
 
-module.exports= new Sequelize('database', 'username', 'password', {
-  host: 'LAPTOP-5258JNB8\\SQLEXPRESS',
+module.exports= new Sequelize(dbName, dbUser, dbPassword, {
+  host: '192.168.1.7',
+  port:'60460',
   dialect: 'mssql',
 });
